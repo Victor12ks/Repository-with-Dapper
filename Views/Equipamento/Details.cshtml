@@ -1,0 +1,42 @@
+﻿@model McardsBanco.Models.Equipamento
+
+@{
+    ViewBag.Title = "Equipamento";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Equipamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayName(((List<McardsBanco.Models.Marca>)ViewBag.Marca).First().Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-link" })
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Equipamento }, new { @class = "btn btn-primary" })
+</p>

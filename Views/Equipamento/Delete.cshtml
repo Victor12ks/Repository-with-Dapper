@@ -1,0 +1,50 @@
+﻿@model McardsBanco.Models.Equipamento
+
+@{
+    ViewBag.Title = "Equipamento";
+}
+
+<h2>Apagar</h2>
+
+@*<h3>Tem certeza que deseja apagar isso?</h3>*@
+<div>
+    <h4>Equipamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayName(((List<McardsBanco.Models.Marca>)ViewBag.Marca).First().Descricao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+
+        @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-link" })
+
+        <input type="submit" value="Apagar" class="btn btn-danger" />
+    </div>
+    }
+</div>
